@@ -1,0 +1,21 @@
+---
+- name: make sure that the required packages are installed
+  package:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - cifs-utils
+
+- name: generate the credentials file
+  template:
+    src: credentials.j2
+    dest: "/etc/{{ creds_uuid }}"
+    mode: 0600
+
+- name: add the cifs mount to the fstab
+  ansible.posix.mount:
+    path: "{{ mount_point }}"
+    src: "{{ cifs_volume }}"
+    fstype: "cifs"
+    opts: "{{ fstab_options }}"
+    state: mounted

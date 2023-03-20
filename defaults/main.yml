@@ -1,0 +1,7 @@
+---
+creds_uuid: "{{ 'cifs' | to_uuid }}"
+domain: "domain"
+fstab_options: "defaults"
+mount_point: /mnt/cifs
+password: "password"
+username: "username"

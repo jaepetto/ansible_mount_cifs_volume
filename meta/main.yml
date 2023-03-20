@@ -1,0 +1,16 @@
+galaxy_info:
+  author: Emmanuel Jaep
+  description: Mount a remote filesystem using cifs
+
+  license: license (GPL-3.0)
+
+  min_ansible_version: "2.1"
+
+  platforms:
+  - name: Ubuntu
+    versions:
+    - "jammy"
+
+  galaxy_tags: []
+
+dependencies: []
